@@ -1,11 +1,9 @@
-// COMPILER PREPROCESSING ---------------------------------------
-
-enum command {OFF, THEATER, SPARKLE, SPARK, SPOT, FLAME};
+#define NBSTATE 6
 static const char *stateStr[] = {"off","theater","sparkle","spark","spot","flame"};
+enum command {OFF, THEATER, SPARKLE, SPARK, SPOT, FLAME};
+command state=OFF;
 
 // GLOBAL VARIABLES -----------------------------------------------
-command state=OFF;//by default the first val of the state enum
-
 long nextupdate = millis();//present time
 int red = 226;
 int green = 88;
@@ -27,7 +25,7 @@ void leds_loop(){
     case SPARK:   spark(red, green, blue, interval, brightness);break;
     case SPOT:    spot(red, green, blue, interval, brightness);break;
     case THEATER: theater(red, green, blue, interval, brightness);break;
-    //case FLAME:   flame(red, green, blue, brightness);break;
+    case FLAME:   flame(red, green, blue, brightness);break;
     default: state = OFF;
   }
 }

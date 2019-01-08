@@ -15,18 +15,11 @@ void handlehttp(){
   server.on("/", sendcontent);
   server.on("/state", [](){
     String request = server.arg("s");
-    for(int i=0;i<6;i++){
+    for(int i=0;i<NBSTATE;i++){
       if(request == stateStr[i])state = (command)i;
     }
     sendcontent();
     });
-  server.on("/theater",   [](){state=THEATER; sendcontent();});
-  server.on("/sparkle",   [](){state=SPARKLE; sendcontent();});
-  server.on("/spark",     [](){state=SPARK;   sendcontent();});
-  server.on("/spot",      [](){state=SPOT;    sendcontent();});
-  server.on("/flame",     [](){state=FLAME;   sendcontent();});
-  server.on("/off",       [](){state=OFF;     sendcontent();});
-  
   server.on("/interval",  [](){ interval = server.arg("i").toInt();});
   server.on("/brightness", [](){brightness = server.arg("b").toInt();});
 

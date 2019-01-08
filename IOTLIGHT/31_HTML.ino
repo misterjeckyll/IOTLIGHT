@@ -54,13 +54,6 @@ void sendcontent(){
     <body>\
       <h1>Hello from the IOTLIGHT !</h1>\
       <p>This is a very basic http webserver hosted on a wifi enabled microcontoler</p>\
-      <a href='/off'><button>OFF</button></a>\
-      <h2>Lights effects :</h2>\
-      <a href='/sparkle'><button>SPARKLE</button></a>\
-      <a href='/spot'><button>SPOT</button></a>\
-      <a href='/spark'><button>SPARK</button></a>\
-      <a href='/theater'><button>THEATER CHASE</button></a>\
-      <a href='/flame'><button>FLAME</button></a>\
       <h2>Colours</h2>\
       <a href='/couleur?r=255&g=0&b=0'><button>RED</button></a>\
       <a href='/couleur?r=0&g=255&b=0'><button>GREEN</button></a>\

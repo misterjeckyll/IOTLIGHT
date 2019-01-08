@@ -23,7 +23,6 @@
 // PARAMETERS ----------------------------------------------------
 #define PIN D4 //neopixel data pin
 #define NBLED 290
-#define NBSTATE 6
 
 // GLOBAL VARIABLES -----------------------------------------------
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(NBLED, PIN, NEO_RGB + NEO_KHZ800);
