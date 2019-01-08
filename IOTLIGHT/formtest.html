@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    * { box-sizing: border-box;}
+    input[type="radio"], input[type="checkbox"]{display: none;}
+    .tgl + .tgl-btn {
+      display: block;
+      width: 4em;
+      height: 2em;
+      border-radius: 2em;
+      padding: 2px;
+      position: relative;
+      cursor: pointer;
+      background: #f0f0f0;
+      transition: all .4s ease;
+    }
+    .tgl + .tgl-btn:after {
+      position: relative;
+      display: block;
+      content: "";
+      width: 50%;
+      height: 100%;
+      left: 0;
+    }
+    .tgl:checked + .tgl-btn:after {left: 50%;}
+    .tgl + .tgl-btn:after {
+      border-radius: 50%;
+      background: #fff;
+      transition: all .2s ease;
+    }
+    .tgl:checked + .tgl-btn {background: #9FD6AE;}
+  </style>
+  <script type="text/javascript">
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function update(element) {
+      await sleep(600);
+      element.form.submit();
+      console.log("submited");
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <div>
+      <input onchange="update(this);" class="tgl" name="state" id="sparkle" type="radio" checked/>
+      <label class="tgl-btn" for="sparkle"></label>
+    </div>
+    <div>
+      <input onchange="update(this);" class="tgl" name ="state" id="spot" type="radio"/>
+      <label class="tgl-btn" for="spot"></label>
+    </div>
+  </form>
+</body>
+</html>
+
