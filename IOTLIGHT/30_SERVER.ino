@@ -14,8 +14,9 @@ void server_loop(){
 void handlehttp(){
   server.on("/", sendcontent);
   server.on("/state", [](){
-    for(int id = 0; state < NBSTATE;id++){
-      if(server.arg("s")==stateStr[id])state = (command)id;
+    String request = server.arg("s");
+    for(int i=0;i<6;i++){
+      if(request == stateStr[i])state = (command)i;
     }
     sendcontent();
     });

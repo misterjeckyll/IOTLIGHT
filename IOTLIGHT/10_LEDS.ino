@@ -1,17 +1,7 @@
 // COMPILER PREPROCESSING ---------------------------------------
-#define COMMAND(STATE)\
-  STATE(OFF)\ 
-  STATE(THEATER)\
-  STATE(SPARKLE)\ 
-  STATE(SPARK)\
-  STATE(SPOT)\
-  STATE(FLAME)
-  
-#define GEN_ENUM(ENUM) ENUM,
-#define GEN_STRING(STRING) #STRING,
 
-enum command {COMMAND(GEN_ENUM)};
-static const char *stateStr[] = {COMMAND(GEN_STRING)};
+enum command {OFF, THEATER, SPARKLE, SPARK, SPOT, FLAME};
+static const char *stateStr[] = {"off","theater","sparkle","spark","spot","flame"};
 
 // GLOBAL VARIABLES -----------------------------------------------
 command state=OFF;//by default the first val of the state enum

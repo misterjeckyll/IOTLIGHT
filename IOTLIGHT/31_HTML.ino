@@ -1,3 +1,4 @@
+
 void sendcontent(){
   String mem[6];
   for(int toggle =0;toggle < 6 ;toggle++){
